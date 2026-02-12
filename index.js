@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -16,6 +17,9 @@ app.post("/chat", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("🚀 Backend running on http://localhost:3000");
+// 🔴 MUHIM JOY
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Backend running on port ${PORT}`);
 });
